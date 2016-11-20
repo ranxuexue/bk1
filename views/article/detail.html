@@ -1,0 +1,33 @@
+<%- include ../include/header.html%>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column text-center">
+            <h3>
+                修改文章
+            </h3>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <%=article.title%>
+            </div>
+            <div class="panel-body">
+                <%=article.content%>
+            </div>
+            <%
+            if(user&& user._id == article.user){%>
+            <div class="panel-footer">
+                <a class="btn btn-warning">修改</a>
+                <a href="/article/delete/<%=article._id%>" class="btn btn-danger">删除</a>
+            </div>
+            <%}
+            %>
+
+        </div>
+    </div>
+</div>
+
+<%- include ../include/footer.html%>
